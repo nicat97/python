@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from PyQt4 import QtCore, QtGui
 import sys
 import os
@@ -48,7 +49,7 @@ class PIWindow(QtGui.QWidget):
         layout.addWidget(self.installButton)
         layout.addLayout(grid)
 
-        QtGui.QMessageBox.information(self, "Information", "For use the Package Installer you must be install 'gksu' package by the typing <b>sudo apt-get install gksu</b> command on terminal.")
+        QtGui.QMessageBox.information(self, "Information", "To use the Package Installer you must install 'gksu' package by typing <b>sudo apt-get install gksu</b> command on terminal.")
 
         self.show()
 
@@ -60,7 +61,7 @@ class PIWindow(QtGui.QWidget):
         self.lineEditFilePath.setText(filePath)
 
     def about(self):
-        QtGui.QMessageBox.information(self, "About Package Installer", """Package Installer helps you to install '.deb', '.sh', 'tar' files via Terminal without typing command. It only tested on Ubuntu 15.10. Firstly, you must be install 'gksu' package by the typing <b>sudo apt-get install</b> command on terminal.""")
+        QtGui.QMessageBox.information(self, "About Package Installer", """Package Installer helps you to install '.deb', '.sh', 'tar' files via Terminal without typing any commands. It only tested on Ubuntu 15.10. Firstly, you must install 'gksu' package by typing <b>sudo apt-get install</b> command on terminal.""")
 
     def install_package(self):
         doc = QtGui.QTextDocument()
@@ -81,7 +82,7 @@ class PIWindow(QtGui.QWidget):
                 subprocess.call(['gksudo', 'sudo dpkg -i {}'.format(PackagePath)])
             elif tarfile.is_tarfile(PackagePath):
                 if PackagePath.lower().endswith('.tar.gz'):
-                    Question = QtGui.QMessageBox.question(self, 'Tar file installation', "Installation of 'tar' files with Package Installer can be unsuccessful. You can install it by typing these commands step by step on terminal:<b><p>tar zxf *.tgz</p><p>cd *</p><p>./configure</p><p>make</p><p>make install</p><p></b>Do you want to continue with Package Installer?</p>", QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
+                    Question = QtGui.QMessageBox.question(self, 'Tar file installation', "Installation of 'tar' files with Package Installer can be unsuccessful. You can install it by typing these commands step by step on terminal:<b><p>tar zxf *.tgz</p><p>cd *</p><p>./configure</p><p>make</p><p>make install</p><p></b>Do you want to install with Package Installer?</p>", QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
                     if Question == QtGui.QMessageBox.Yes:
                         os.system('tar zxf {}'.format(PackagePath))
                         os.system('cd {}'.format(Path_tar_gz))
@@ -91,7 +92,7 @@ class PIWindow(QtGui.QWidget):
                     else:
                         pass
                 elif PackagePath.lower().endswith('.tgz'):
-                    Question = QtGui.QMessageBox.question(self, 'Tar file installation', "Installation of 'tar' files with Package Installer can be unsuccessful. You can install it by typing these commands step by step on terminal:<b><p>tar zxf *.tgz</p><p>cd *</p><p>./configure</p><p>make</p><p>make install</p><p></b>Do you want to continue with Package Installer?</p>", QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
+                    Question = QtGui.QMessageBox.question(self, 'Tar file installation', "Installation of 'tar' files with Package Installer can be unsuccessful. You can install it by typing these commands step by step on terminal:<b><p>tar zxf *.tgz</p><p>cd *</p><p>./configure</p><p>make</p><p>make install</p><p></b>Do you want to install with Package Installer?</p>", QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
                     if Question == QtGui.QMessageBox.Yes:
                         os.system('tar zxf {}'.format(PackagePath))
                         os.system('cd {}'.format(Path_tgz))
@@ -101,7 +102,7 @@ class PIWindow(QtGui.QWidget):
                     else:
                         pass
                 elif PackagePath.lower().endswith('.tar.bz2'):
-                    Question = QtGui.QMessageBox.question(self, 'Tar file installation', "Installation of 'tar' files with Package Installer can be unsuccessful. You can install it by typing these commands step by step on terminal:<b><p>tar jxf *.tar.bz2</p><p>cd *</p><p>./configure</p><p>make</p><p>make install</p><p></b>Do you want to continue with Package Installer?</p>", QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
+                    Question = QtGui.QMessageBox.question(self, 'Tar file installation', "Installation of 'tar' files with Package Installer can be unsuccessful. You can install it by typing these commands step by step on terminal:<b><p>tar jxf *.tar.bz2</p><p>cd *</p><p>./configure</p><p>make</p><p>make install</p><p></b>Do you want to install with Package Installer?</p>", QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
                     if Question == QtGui.QMessageBox.Yes:
                         os.system('tar jxf {}'.format(PackagePath))
                         os.system('cd {}'.format(Path_tar_bz2))
@@ -111,7 +112,7 @@ class PIWindow(QtGui.QWidget):
                     else:
                         pass
                 elif PackagePath.lower().endswith('.tbz2'):
-                    Question = QtGui.QMessageBox.question(self, 'Tar file installation', "Installation of 'tar' files with Package Installer can be unsuccessful. You can install it by typing these commands step by step on terminal:<b><p>tar jxf *.tgz</p><p>cd *</p><p>./configure</p><p>make</p><p>make install</p><p></b>Do you want to continue with Package Installer?</p>", QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
+                    Question = QtGui.QMessageBox.question(self, 'Tar file installation', "Installation of 'tar' files with Package Installer can be unsuccessful. You can install it by typing these commands step by step on terminal:<b><p>tar jxf *.tgz</p><p>cd *</p><p>./configure</p><p>make</p><p>make install</p><p></b>Do you want to install with Package Installer?</p>", QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
                     if Question == QtGui.QMessageBox.Yes:
                         os.system('tar jxf {}'.format(PackagePath))
                         os.system('cd {}'.format(Path_tbz2))
