@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#FIXME: there is no any notification about package installation is successful or failed
+#FIXME: there is no any notification about package is successfuly installed or failed
 try:
     from PyQt4 import QtCore, QtGui
     import sys
