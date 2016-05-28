@@ -154,7 +154,7 @@ except ImportError:
             super(shModule, self).__init__()
             self.setWindowTitle("Module Error")
             self.labelMessage = QtGui.QLabel(self)
-            self.labelMessage.setText("'sh' or 'PyQt4' module is not installed.<br/> Please run <i>ready.sh</i> by typing <b>sh ready.sh</b> on terminal.")
+            self.labelMessage.setText("'sh' module is not installed.<br/>Please run <i>ready.sh</i> by typing <b>sh ready.sh</b> on terminal.")
             self.githubLabel = QtGui.QLabel()
             self.githubLabel.setText('''Get <a href='https://github.com/nicat97/packageinstaller'>ready.sh</a>''')
             self.resize(365, 150)
