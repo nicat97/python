@@ -1,1 +1,1 @@
-
+Package Installer helps you to install '.deb', '.sh', 'tar', 'run' files via Terminal without typing any commands. It only tested on Ubuntu 15.10. To use the Package Installer you must run ready.sh file by typing 'sh ready.sh'.
